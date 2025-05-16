@@ -35,6 +35,4 @@ darktheme.onclick = () => {
   document.body.style.color = "#fff";
   listContainer.style.backgroundColor = "#444";
   listContainer.style.color = "#fff";
-  darkBtn.textContent = document.body.classList.contains("dark") ? "Light Mode" : "Dark Mode";
-  document.body.classList.toggle("dark");
 }
