@@ -1,28 +1,40 @@
 const listContainer = document.getElementById("mylist");
 const list = listContainer.querySelector("ul");
-const addmorebtn = document.getElementById("addItem");
-const removebtn = document.getElementById("removeItem");
-const note = document.getElementById("note"); // if this exists
+const addBtn = document.getElementById("additem");
+const removeBtn = document.getElementById("removeitem");
+const darktheme = document.getElementById("darkmode");
+const lighttheme = document.getElementById("lightmode");
 
-addmorebtn.addEventListener("click", () => {
-  // Update heading or message instead of replacing list
-  const heading = listContainer.querySelector("h2");
-  heading.textContent = "New item added!";
-  heading.classList.toggle("highlight");
-
+addBtn.onclick = () => {
   // Add new item
-  const newItem = document.createElement("li");
-  newItem.textContent = "Bread";
-  list.appendChild(newItem);
-});
+  const item = prompt("Enter item to add:");
 
-removebtn.addEventListener("click", () => {
-  const heading = listContainer.querySelector("h2");
-  heading.textContent = "An item was removed!";
-  heading.classList.toggle("highlight");
-
-  // Remove last item if any
-  if (list.lastElementChild) {
-    list.removeChild(list.lastElementChild);
+  if (item) {
+    const newItem = document.createElement("li");
+    newItem.textContent = item;
+    list.appendChild(newItem);
   }
-});
+
+};
+
+removeBtn.onclick = () => {
+  const itemToRemove = prompt("Enter item to remove:");
+  const items = Array.from(list.getElementsByTagName("li"));
+  const found = items.find((li) => li.textContent === itemToRemove);
+
+  if (found) {
+    list.removeChild(found);
+  } else {
+    alert("Item not found");
+  }
+};
+
+darktheme.onclick = () => {
+  // Change to dark theme
+  document.body.style.backgroundColor = "#333";
+  document.body.style.color = "#fff";
+  listContainer.style.backgroundColor = "#444";
+  listContainer.style.color = "#fff";
+  darkBtn.textContent = document.body.classList.contains("dark") ? "Light Mode" : "Dark Mode";
+  document.body.classList.toggle("dark");
+}

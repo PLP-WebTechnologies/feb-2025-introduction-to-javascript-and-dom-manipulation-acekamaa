@@ -1,7 +1,8 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    background-image: url('shopping.png');
+    background-size: cover;
+    color: #ffffff;
     margin: 0;
     padding: 0;
     display: flex;
@@ -13,42 +14,81 @@ body {
 .list{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 50px;
+    margin: 40px;
     padding: 20px;
-    background-color: #fff;
+    background-color: palevioletred;
+    opacity: 0.8;
     width:fit-content;
-    border: 1px solid black;
+    border: 1px solid transparent;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
 }
 
 h2 {
-    color: #333;
-    font-size: 24px;
+    color: navajowhite;
+    font-size: 2rem;
+    font-weight: bold;
 }
 
 ul {
     display: flex;
     flex-direction: column;
-    padding: 0;
+    padding-right: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+
+}
+
+p {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+    text-align: center;
+    padding: 5px;
 }
 
 li {
     list-style-type: upper-alpha;
     margin: 10px 0;
     padding: 5px;
-    text-align: center;
 }
 
-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color:cadetblue;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
+.list.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1.2rem;
+    padding: 1rem;
+    font-weight: bold;
+}
+
+.list#additem{
+    background-color: navajowhite;
+    color: black;
+}
+
+.list#additem:hover{
+    background-color: greenyellow;
+}
+
+.list#removeitem{
+    background-color: navajowhite;
+    color: black;
+}
+
+.list#removeitem:hover{
+    background-color: red;
+}
+
+.list#darkmode{
+    background-color: navajowhite;
+    color: black;
 }
